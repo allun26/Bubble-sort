@@ -12,9 +12,26 @@ def bubble_sort(array)
     end
 end
 
+def bubble_sort_by(array)
+    need_sort = true
+    while need_sort
+        need_sort = false
+        for i in 0...array.length - 1
+            if yield(array[i], array[i + 1]) > 0
+            array[i], array[i + 1] = array[i + 1], array[i]
+            need_sort = true
+            end
+        end
+    end
+end
 
-arr = [4,2,6,4,7,8,1,2]
+
+
+arr = [4,3,78,2,0,2]
+arr1 = ["Hi", "Hello", "Hey"]
 
 bubble_sort(arr)
+bubble_sort_by(arr1) { |left, right| left.length - right.length } 
 
 print arr
+print arr1

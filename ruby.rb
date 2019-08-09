@@ -1,7 +1,8 @@
 # frozen_string_literal: true
+
 def bubble_sort(array)
   need_sort = true
-   while need_sort
+  while need_sort
     need_sort = false
     for i in 0...array.length - 1
       if array[i] > array[i + 1]
@@ -26,7 +27,7 @@ def bubble_sort_by(array)
 end
 
 arr = [4, 3, 78, 2, 0, 2]
-arr1 = %w(Hi Hello Hey)
+arr1 = %w[Hi Hello Hey]
 
 bubble_sort(arr)
 bubble_sort_by(arr1) { |left, right| left.length - right.length }

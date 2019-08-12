@@ -4,7 +4,7 @@ def bubble_sort(array)
   need_sort = true
   while need_sort
     need_sort = false
-    for i in 0...array.length - 1
+    (array.length - 1).times do |i|
       if array[i] > array[i + 1]
         array[i], array[i + 1] = array[i + 1], array[i]
         need_sort = true
@@ -17,7 +17,7 @@ def bubble_sort_by(array)
   need_sort = true
   while need_sort
     need_sort = false
-    for i in 0...array.length - 1
+    (array.length - 1).times do |i|
       if yield(array[i], array[i + 1]).positive?
         array[i], array[i + 1] = array[i + 1], array[i]
         need_sort = true
